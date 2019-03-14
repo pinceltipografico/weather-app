@@ -8,6 +8,7 @@ import { WeatherProvider } from '../contexts/weatherContext';
 import { weatherApi } from '../constants/weatherapi';
 import dayjs from 'dayjs';
 
+
 class App extends Component {
 
   static propTypes = {
@@ -22,8 +23,7 @@ class App extends Component {
   };
 
   async componentDidMount () {
-    const response = await this.fetchWeathers('Vancouver');
-    this.formmatResults(response);
+    await this.fetchWeathers('Vancouver');
   }
 
   /**
@@ -66,7 +66,8 @@ class App extends Component {
       const response = await fetch(toGet,{
         method: 'GET'
       });
-      return response.json();
+      const jsonResult = await response.json()
+      return this.formmatResults(jsonResult);
     } catch (error) {
       this.setState({error});
     }
@@ -85,6 +86,12 @@ class App extends Component {
       <WeatherProvider value={provider}>
 
         <HeaderComponent title="Weather App" />
+
+        {fetching &&
+        <div style={{color: "#28a9b6", margin: '120px auto'}}>
+            loading forecasts...
+        </div>
+        }
 
         {(!fetching && weatherList.length) &&
         <React.Fragment>
