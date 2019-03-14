@@ -1,5 +1,18 @@
 # React Weather App
-Access Link: https://www.frame3.com.br/weather/
+This app consists in fetch the forecasts weather of diferent cities using the openweather api. To include new cities change the file src/constants/citieslist.js:
+
+```js
+export const citiesList = [
+  'Vancouver',
+  'São Paulo',
+  'New York',
+  'London',
+  'Moscou',
+  'Tokyo'
+]
+```
+
+Access the demo: https://www.frame3.com.br/weather/
 
 ## Run in development mode
 To run in development mode first install all dependencies:
@@ -11,6 +24,12 @@ npm install && npm run start
 Using Yarn:
 ```
 yarn && yarn start
+```
+
+## To test you app
+To run the tests run the command.
+```
+yarn test
 ```
 
 ## Docker Production Mode
