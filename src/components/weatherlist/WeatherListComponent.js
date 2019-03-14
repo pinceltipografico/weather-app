@@ -37,6 +37,12 @@ export class WeatherListComponent extends Component {
     })
   }
 
+  componentWillReceiveProps(newProps) {
+    this.setState({
+      selectedDay: newProps.list[0]
+    })
+  }
+
   render () {
     const {selectedDay} = this.state
     return (
