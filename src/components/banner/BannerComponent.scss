@@ -1,0 +1,79 @@
+@import '~@/scss/mixins';
+
+$white: #fff;
+
+.banner {
+  align-items: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  height: rem(500px);
+  margin-top: rem(100px);
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.weather-data {
+  display: flex;
+  flex-direction: column;
+  padding: rem(40px);
+  width: 100%;
+}
+
+.date {
+  @include font-size(1.5);
+  color: $white;
+  margin: 0 auto;
+  max-width: 1024px;
+  width: 100%;
+}
+
+.widget {
+  align-items: center;
+  display: flex;
+  margin: 0 auto;
+  max-width: 1024px;
+  padding-top: rem(40px);
+  width: 100%;
+
+  span {
+    @include font-size(1.2);
+    color: $white;
+  }
+
+  h1 {
+    @include font-size(10);
+    color: $white;
+    margin: 0;
+    position: relative;
+
+    // brea for small phones
+    @include breakpoint(phone-wide, max) {
+      @include font-size(8);
+    }
+  }
+
+  small {
+    @include font-size(5);
+    font-weight: 100;
+    position: absolute;
+    right: rem(-70px);
+    top: rem(15px);
+  }
+}
+
+.icon {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+
+  img {
+    max-width: rem(300px);
+  }
+
+  @include breakpoint(phone-wide, max) {
+    display: none;
+  }
+}

@@ -1,0 +1,30 @@
+@import '~@/scss/mixins';
+
+$white: #fff;
+
+.header {
+  @include flex-container;
+
+  background-color: color(primary);
+  flex: 1 1 auto;
+  height: rem(100px);
+  padding: 0 rem(20px);
+  position: fixed;
+  z-index: 2;
+}
+
+.logo {
+  max-height: rem(80px);
+}
+
+.title {
+  border-left: 1px dashed $white;
+  border-right: 1px dashed $white;
+  color: $white;
+  margin: rem(10px) 0 0 rem(20px);
+  padding: 0 rem(20px);
+  
+  @include breakpoint(phone-wide, max) {
+    display: none;
+  }
+}

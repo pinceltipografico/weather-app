@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AppComponent should render app without error 1`] = `
+<ContextProvider
+  value={
+    Object {
+      "currentCity": "Vancouver",
+      "fetchWeathers": [Function],
+      "fetching": true,
+      "todayWeather": null,
+      "weatherList": Array [],
+    }
+  }
+>
+  <HeaderComponent
+    title="Weather App"
+  />
+</ContextProvider>
+`;

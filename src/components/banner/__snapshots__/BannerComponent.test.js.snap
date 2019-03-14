@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BannerComponent should render without problems 1`] = `
+<section
+  style={
+    Object {
+      "backgroundImage": "url(cloudy.jpg)",
+    }
+  }
+>
+  <div>
+    <span>
+      São Paulo
+       - 
+      March 14, 10:10
+    </span>
+    <div>
+      <div>
+        <span>
+          Day 
+          32.74
+          ° - Night 
+          28.48
+          °
+        </span>
+        <h1>
+          32.74
+          <small>
+            °F
+          </small>
+        </h1>
+        <span>
+          air humidity 
+          84
+        </span>
+      </div>
+      <div>
+        <img
+          alt="mostly sunny"
+          src="http://openweathermap.org/img/w/04d.png"
+        />
+        <span>
+          broken clouds
+        </span>
+      </div>
+    </div>
+  </div>
+</section>
+`;

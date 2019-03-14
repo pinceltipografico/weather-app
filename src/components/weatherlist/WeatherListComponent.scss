@@ -1,0 +1,133 @@
+@import '~@/scss/mixins';
+
+$white: #fff;
+
+.list {
+  display: flex;
+  margin: 0 auto;
+  max-width: 1024px;
+  padding: 0;
+
+  @include breakpoint(phone-wide, max) {
+    flex-direction: column;
+  }
+
+  @include breakpoint(tablet, max) {
+    flex-direction: column;
+  }
+
+  li {
+    @include font-size(2);
+    align-items: center;
+    color: $white;
+    cursor: pointer;
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column-reverse;
+    justify-content: center;
+    padding: rem(20px);
+    text-align: center;
+
+    &.active {
+      background-color: darken(color(secondary), $amount: 10%);
+
+      @include breakpoint(phone-wide, max) {
+        flex-wrap: wrap;
+      }
+
+      @include breakpoint(tablet, max) {
+        flex-wrap: wrap;
+      }
+    }
+
+    // BREAKPOINT FOR SMALL PHONES
+    @include breakpoint(phone-wide, max) {
+      flex-direction: row;
+      justify-content: flex-start;
+      padding: rem(40px) rem(20px);
+      width: 100%;
+    }
+
+    @include breakpoint(tablet, max) {
+      flex-direction: row;
+      justify-content: flex-start;
+      padding: rem(40px) rem(20px);
+      width: 100%;
+    }
+
+  }
+}
+
+.day {
+  display: block;
+
+  // BREAKPOINT FOR SMALL PHONES
+  @include breakpoint(phone-wide, max) {
+    margin-right: auto;
+  }
+
+  @include breakpoint(tablet, max) {
+    margin-right: auto;
+  }
+}
+
+.icon {
+  margin-left: rem(20px);
+  max-height: rem(60px);
+  max-width: rem(60px);
+}
+
+
+.forecasts {
+  background-color: $white;
+  padding: rem(15px);
+
+  h2 {
+    margin: 0;
+    text-align: center;
+  }
+  @include breakpoint(phone-wide, max) {
+    display: none;
+  }
+
+  @include breakpoint(tablet, max) {
+    display: none;
+  }
+}
+
+.forecasts-list {
+  margin: 0 auto;
+  max-width: 1024px;
+  padding: 0 rem(40px) rem(40px);
+
+  li {
+    @include font-size(2);
+    align-items: center;
+    border-bottom: 1px solid darken($color: $white, $amount: 10%);
+    display: flex;
+    padding: rem(20px);
+  }
+
+  .day {
+    margin-right: auto;
+  }
+
+  &.is-sub-menu {
+    background-color: darken($color: $white, $amount: 10%);
+    display: none;
+    margin-top: rem(15px);
+    width: 100%;
+
+    li {
+      color: color(text);
+    }
+
+    @include breakpoint(phone-wide, max) {
+      display: block;
+    }
+
+    @include breakpoint(tablet, max) {
+      display: block;
+    }
+  }
+}

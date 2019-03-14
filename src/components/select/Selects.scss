@@ -1,0 +1,61 @@
+@import '~@/scss/mixins';
+
+$white: #fff;
+
+.selects {
+  border: 1px solid darken(color(primary), $amount: 20%);
+  border-radius: rem(7px);
+  height: rem(70px);
+  margin-left: auto;
+  position: relative;
+  width: rem(400px);
+
+  @include breakpoint(phone-wide, max) {
+    margin-left: rem(15px);
+  }
+}
+
+.icon {
+  border-bottom: 4px solid $white;
+  border-right: 4px solid $white;
+  height: rem(20px);
+  position: absolute;
+  right: rem(10px);
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
+  width: rem(20px);
+}
+
+.label {
+  @include font-size(1.5);
+  color: $white;
+  height: rem(50px);
+  line-height: rem(70px);
+  padding-left: rem(15px);
+  position: absolute;
+  width: 100%;
+}
+
+.list {
+  background-color: $white;
+  margin: 0;
+  padding: rem(10px);
+  position: absolute;
+  top: 110%;
+  width: 100%;
+  z-index: 999;
+
+  li {
+    display: inline-block;
+    width: 100%;
+  }
+
+  button {
+    background-color: transparent;
+    border: 0;
+    border-bottom: 1px solid darken($color: $white, $amount: 10%);
+    padding: rem(20px);
+    text-align: left;
+    width: 100%;
+  }
+}

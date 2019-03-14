@@ -1,0 +1,53 @@
+@import 'units';
+
+@function rem($size) {
+  $remSize: $size / 16px;
+  @return #{$remSize}rem;
+}
+
+@function color($key: primary){
+  @if map_has_key($colors, $key) {
+    $color: map_get($colors, $key);
+    @return $color;
+  }@else {
+    @return #000;
+  }
+}
+
+@mixin font-size($sizeValue: 1.6) {
+  font-size: ($sizeValue * 10) + px;
+  font-size: $sizeValue + rem;
+}
+
+@mixin flex-container($align-items: center, $justify-content: flex-start) {
+  align-items: $align-items;
+  display: flex;
+  justify-content: $justify-content;
+  width: 100%;
+}
+
+@mixin clear {
+  &::after {
+    clear: both;
+    content: '';
+    display: table;
+  }
+}
+
+@mixin resetButton {
+  -webkit-appearance: none;
+  background: none;
+  border:0;
+}
+
+@mixin breakpoint($width, $type: min) {
+  @if map_has_key($breakpoints, $width) {
+    $width: map_get($breakpoints, $width);
+    @if $type == max {
+      $width: $width - 1px;
+    }
+    @media only screen and (#{$type}-width: $width) {
+      @content;
+    }
+  }
+}
